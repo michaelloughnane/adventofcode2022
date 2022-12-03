@@ -33,6 +33,9 @@ public class day2
                 score += (((temp = Arrays.binarySearch(plays, opp) + 2) <= 3) ? temp : 1) + 6;
         }
 
+        if(br != null)
+            br.close();
+
         System.out.println(score);
     }
 }
