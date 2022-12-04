@@ -19,10 +19,8 @@ public class day4 {
             end1 = Integer.parseInt(r1.substring(r1.indexOf('-') + 1));
             end2 = Integer.parseInt(r2.substring(r2.indexOf('-') + 1));
             
-            // Either they completely overlap, or one of the intervals starts in between
-            // the bounds of the other two - check for both cases.
-            if((start1 <= start2 && end1 >= end2 || start2 <= start1 && end2 >= end1)
-                || (start1 <= end2 && start1 >= start2 || start2 <= end1 && start2 >= start1))
+            // If one interval starts between the other two, there's an overlap.
+            if(start1 <= end2 && start1 >= start2 || start2 <= end1 && start2 >= start1)
                 overlapCount++;
             
         }
